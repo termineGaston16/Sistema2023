@@ -26,4 +26,36 @@ public class Sistema {
 		return true;
 	}
 
+	public Integer calcularLaCantidadDeUsuariosLogueados() {
+		Integer usuarioLo=0;
+					
+		for (Usuario usuario : listaDeUsuarios) {
+			if (usuario.getEstadoDeLaCuenta().equals(EstadoDeLaCuenta.LOGUEADO)) {
+				usuarioLo++;
+			}
+		}
+		
+		return usuarioLo;
+	}
+
+	public Integer calcularLaCantidadDeUsuariosBloqueados() {
+		Integer usuarioBlo=0;
+		
+		for (Usuario usuario : listaDeUsuarios) {
+			if (usuario.getEstadoDeLaCuenta().equals(EstadoDeLaCuenta.BLOQUEADO)) {
+				usuarioBlo++;
+			}
+		}
+		
+		return usuarioBlo;
+	}
+
+	public Double calcularElPorcentajeDeUsuariosLogueados(Integer cantidadDeUsuariosLogueados2) {
+		double porcentaje=0.0;
+		
+		porcentaje=((cantidadDeUsuariosLogueados2*this.listaDeUsuarios.size())/10);
+		
+		return porcentaje;
+	}
+
 }
